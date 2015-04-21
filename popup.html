@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="bug">
 	<head>
 	    <meta charset="utf-8">
 		<meta name="description" content="Chrome extension for easy access to bugmenot accounts">
@@ -16,9 +16,23 @@
 		<link href="css/custom.css" rel="stylesheet" media="screen">		
 	</head>
 	
-	<body>
+	<body ng-controller="BugControl as bug">
 
-		<a href="bugmenot.com">bugmenot.com</a>
+		<h4>BugMeNot for Chrome Unofficial</h4>
+		<h4>{{domain}}</h4>
+		
+		<div class="container">
+			<div ng-repeat="login in datos.results.login">
+				Usuario: {{login.user}}
+				<br>
+				Contraseña: {{login.password}}
+				<br>
+				Success: {{login.success}}
+				<br>
+			</div>
+		</div>
 
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
 	</body>
 </html>

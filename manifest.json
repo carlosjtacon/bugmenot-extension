@@ -4,7 +4,9 @@
 	"description": "Chrome extension for easy access to bugmenot accounts",
 	"version": "1.0",
 	"permissions": [
-		"storage"
+		"activeTab",
+		"tabs",
+		"https://ajax.googleapis.com/"
 	],
 	"icons": { 
 		"16": "img/icon16.png",
