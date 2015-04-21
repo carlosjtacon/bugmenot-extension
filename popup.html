@@ -18,16 +18,15 @@
 	
 	<body ng-controller="BugControl as bug">
 
-		<h4>BugMeNot for Chrome Unofficial</h4>
-		<h4>{{domain}}</h4>
+		<h4>BugMeNot (Unofficial)</h4>
+		
 		
 		<div class="container">
+			<h5>Dominio: {{domain}}</h5>
 			<div ng-repeat="login in datos.results.login">
-				Usuario: {{login.user}}
-				<br>
-				Contraseña: {{login.password}}
-				<br>
-				Success: {{login.success}}
+				<div class="user">Usuario: {{login.user}}</div>
+				<div class="pass">Contraseña: {{login.password}}</div>
+				<div class="success">Success: {{login.success}}</div>
 				<br>
 			</div>
 		</div>

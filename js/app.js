@@ -6,6 +6,7 @@ function parse_url(callback) {
     var url = tabs[0].url;
     var subdominio = url.replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0];
     var dominio = subdominio.split(".")
+    //no funciona para dominios .co.uk por ejemplo, dos .
     if (dominio.length === 3) {
     	the_url = dominio[1] + "." + dominio[2];
     } else {
@@ -20,12 +21,15 @@ angular.module('bug', [])
 
 .controller('BugControl', ['$scope','$http', function($scope, $http) {
 	parse_url(function(t_url) {
+
 		$scope.domain = t_url;
 		console.log($scope.domain);
 		var url = 'https://www.kimonolabs.com/api/ondemand/cfie1m3k?apikey='+ api_key +'&kimpath2=' + $scope.domain
+
 		$http.get(url).success(function(data){
 			console.log(url)
 			$scope.datos = data;
+		
 		});
 	});
 }]);

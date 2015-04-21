@@ -6,7 +6,8 @@
 	"permissions": [
 		"activeTab",
 		"tabs",
-		"https://ajax.googleapis.com/"
+		"http://*/",
+		"https://*/"
 	],
 	"icons": { 
 		"16": "img/icon16.png",
