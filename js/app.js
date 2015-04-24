@@ -20,16 +20,16 @@ function parse_url(callback) {
 angular.module('bug', []) 
 
 .controller('BugControl', ['$scope','$http', function($scope, $http) {
-	parse_url(function(t_url) {
+    parse_url(function(t_url) {
 
-		$scope.domain = t_url;
+		$scope.domain = "Cargando ...";
 		console.log($scope.domain);
-		var url = 'https://www.kimonolabs.com/api/ondemand/cfie1m3k?apikey='+ api_key +'&kimpath2=' + $scope.domain
+		var url = 'https://www.kimonolabs.com/api/ondemand/cfie1m3k?apikey='+ api_key +'&kimpath2=' + t_url
 
 		$http.get(url).success(function(data){
 			console.log(url)
 			$scope.datos = data;
-		
+            $scope.domain = t_url;
 		});
 	});
 }]);
