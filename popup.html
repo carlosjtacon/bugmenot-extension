@@ -18,16 +18,33 @@
 	
 	<body ng-controller="BugControl as bug">
 
-		<h4>BugMeNot (Unofficial)</h4>
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container">
+		    <a class="navbar-brand">BugMeNot (Unofficial)</a>
+		  </div>
+		</nav>		
 		
-		
-		<div class="container">
-			<h5>Dominio: {{domain}}</h5>
-			<div ng-repeat="login in datos.results.login">
-				<div class="user">Usuario: {{login.user}}</div>
-				<div class="pass">Contraseña: {{login.password}}</div>
-				<div class="success">Success: {{login.success}}</div>
-				<br>
+		<div ng-if="!datos">
+			<div id="loadImg">
+				<div>
+					Cargando
+					<img src="img/loading.gif" />
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="datos">
+			<div class="container">
+				<!-- <h5>Dominio: {{domain}}</h5> -->
+				<div ng-repeat="login in datos.results.login">
+					<div class="user"><b>User:</b> {{login.user}}</div>
+					<div class="pass"><b>Password:</b> {{login.password}}</div>
+					<div class="color_{{getColor(login.success)}}">{{login.success}}</div>
+					<br>
+				</div>
+				<div ng-if="datos.count == 0">
+					No se encontraron resultados :(
+				</div>
 			</div>
 		</div>
 
