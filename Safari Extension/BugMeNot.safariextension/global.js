@@ -25,11 +25,18 @@ function handleToolBarEvent(event){
     item.showPopover();
 };
 
+safari.application.addEventListener("validate",validateHandler,false)
+function validateHandler(event){
+    if (event.target.identifier != "BugMeNotToolbar") return;
+    var url = current_URL();
+    if (url == undefined) event.target.disabled = true
+        else event.target.disabled = false
+};
+
 /* deallocate the popover every time a new window/tap is activated
 *  this is done in order to avoid conflicts when working with more than one 
 *  window
 */
-
 safari.application.addEventListener("activate",handleOpenEvent,true)
 function handleOpenEvent(event){
     safari.extension.removePopover("main")

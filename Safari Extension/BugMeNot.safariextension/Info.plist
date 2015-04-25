@@ -24,7 +24,7 @@
 				<key>Command</key>
 				<string>unbug</string>
 				<key>Identifier</key>
-				<string>Toolbar</string>
+				<string>BugMeNotToolbar</string>
 				<key>Image</key>
 				<string>icon.png</string>
 				<key>Include By Default</key>
