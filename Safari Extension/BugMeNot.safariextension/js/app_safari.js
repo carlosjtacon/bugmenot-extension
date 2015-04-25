@@ -1,5 +1,5 @@
 var the_url;
-var api_key = "PuGa0q6lJ63a4MP02z6e1LKzamGQCJ6d";
+var api_key = "kimono_api_key";
 
 function parse_url(callback) {
     console.log(safari.extension.globalPage.contentWindow.current_URL());
