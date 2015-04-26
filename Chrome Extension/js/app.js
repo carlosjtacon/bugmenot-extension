@@ -1,5 +1,5 @@
 var the_url;
-var api_key = "KIMONOLABS_API_KEY";
+var api_key = "de0879bde11259d2262353b9be57e360";
 
 function parse_url(callback) {
   chrome.tabs.query({'active':true}, function(tabs) {
