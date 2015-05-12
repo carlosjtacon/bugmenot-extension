@@ -24,7 +24,8 @@ angular.module('bug', [])
     $scope.getColor = function(rate) {
       var percent_array = rate.split("%");
       var percent = percent_array[0];
-      if(percent > 90) {
+      return Math.floor(percent/10)*10;
+      /*if(percent > 90) {
         return 90;
       } else if (percent > 80) {
         return 80;
@@ -44,7 +45,7 @@ angular.module('bug', [])
         return 10;
       } else if (percent > 0) {
         return 0;
-      }
+      }*/
     }
 
     parse_url(function(t_url) {
